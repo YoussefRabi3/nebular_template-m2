@@ -1,0 +1,36 @@
+<nb-layout>
+  <nb-layout-header fixed>
+      <div class="mr-5">
+        <a (click)="toggleSidebar()">
+          <nb-icon icon="menu"></nb-icon>
+        </a>
+      </div>
+      <div class="img-header ml-5">
+        <img src="../../assets/logo.png">
+      </div>
+
+    <div class="nav-right" >
+      <nb-user name="RABII "
+               title="ITS"
+               [nbContextMenu]="itemsRightNav"
+               nbContextMenuTag="my-context-menu">
+
+      </nb-user>
+    </div>
+  </nb-layout-header>
+
+  <nb-sidebar>
+      <nb-menu [items]="items">
+      </nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <!--pour donner lacces à remplir au dohors de projet-->
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+  <nb-layout-footer fixed>
+       <div class="add-user-button">
+         <span style="color: red">Help Center </span>
+       </div>
+  </nb-layout-footer>
+</nb-layout>

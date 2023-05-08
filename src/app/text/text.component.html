@@ -1,0 +1,19 @@
+<input type="file" accept=".xlsx,.xls,.csv" (change)="onFileChange($event)">
+
+
+<div style="width: 50%; margin-left: 20%">
+<table class="table table-striped">
+  <thead>
+
+  <tr>
+    <th *ngFor="let header of data[0]">{{ header }}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of data.slice(1)">
+    <td *ngFor="let cell of row">{{ cell }}</td>
+  </tr>
+  </tbody>
+
+</table>
+</div>

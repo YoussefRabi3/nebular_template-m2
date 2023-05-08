@@ -1,0 +1,153 @@
+
+
+.title-animation {
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+  animation-name: bounceInDown;
+}
+
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+
+
+
+
+.validation-icon{
+  color: red;
+  font-size: 40px;
+  margin-left: 500px;
+
+}
+.border-pointed{
+  border: 2px dashed red;
+  text-align: center;
+  border-bottom: 5px solid red;
+
+}
+.input-container {
+  position: relative;
+  text-align: center;
+}
+
+.input-container input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.input-container i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.fas.fa-file-excel {
+  font-size: 60px;
+  color: red;
+  text-align: center;
+  margin-left: 450px;
+
+
+}
+
+.but {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.but button:nth-child(1) {
+  margin-right: auto;
+}
+
+.but button {
+  width: 100px;
+}
+
+
+
+.buttonn:hover {
+  cursor: pointer;
+}
+nb-progress-bar ~ nb-progress-bar {
+  margin-top: 1rem;
+}
+
+.control-status-example {
+  margin-top: 1rem;
+}
+.fas.fa-file-alt{
+  color: red;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+.Name{
+  margin-left: 10px;
+  color: black;
+}
+
+
+
+
+
+.progress-bar.animate {
+  animation: progress-animation 1s linear infinite;
+}
+
+@keyframes progress-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.ma-carte {
+
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  color: #ffffff; /* changement de couleur de texte */
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+

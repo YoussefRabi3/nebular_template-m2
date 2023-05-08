@@ -1,0 +1,143 @@
+<nb-card>
+  <nb-card-header>
+    <h5  class="title-animation title-heading text-uppercase my-auto p-2">Traitement RPA - DEPOSER UN FICHIER</h5>
+    <app-progress-bar></app-progress-bar>
+    </nb-card-header>
+  <nb-card-body>
+    <nb-stepper>
+      <nb-step [stepControl]="firstForm" label="First step">
+        <form [formGroup]="firstForm" (ngSubmit)="onFirstSubmit()" class="step-container">
+          <div class="border-pointed"><br>
+          <div class="input-group">
+            <div class="input-container">
+              <i class="fas fa-file-excel" >
+                <input nbInput type="file" class="form-control" accept=".xlsx,.xls,csv" formControlName="firstCtrl"
+                       [ngClass]="{'form-control-danger': firstForm.invalid && (firstForm.dirty || firstForm.touched)}"
+                       >
+              </i>
+            </div>
+            <nb-icon class="validation-icon" *ngIf="firstForm.valid" icon="checkmark-outline"></nb-icon>
+            <nb-icon class="validation-icon" *ngIf="firstForm.invalid && (firstForm.dirty || firstForm.touched)" icon="close-square-outline">
+            </nb-icon><br><br><br>
+          </div><br>
+            <p class="lorem">
+              <b>Faites glisser et déposer vos fichiers içi ou</b>  <span style="color: red"> <b> choisissez un fichier</b></span><br>
+              <span>XLSX,xls,csv (2 MB Max) par fichier </span>
+            </p><br><br>
+          </div>
+ <nb-card>
+
+ </nb-card>
+          <div class="but">
+            <button nbButton nbStepperPrevious outline status="danger">prev</button>
+            <button  nbButton nbStepperNext outline status="danger">next</button>
+          </div>
+        </form>
+      </nb-step>
+
+      <!--second forms -->
+      <nb-step [stepControl]="secondForm" label="Second step">
+        <form [formGroup]="secondForm" (ngSubmit)="onSecondSubmit()" class="step-container">
+          <div class="border-pointed"><br>
+            <div class="input-group">
+              <div class="input-container">
+                <i class="fas fa-file-excel" >
+                  <input nbInput type="file" class="form-control" accept=".xlsx,.xls,.csv" formControlName="secondCtrl"
+                         [ngClass]="{'form-control-danger': secondForm.invalid && (secondForm.dirty || secondForm.touched)}"
+                         (change)="onFileSelected($event)">
+                </i>
+              </div>
+              <nb-icon class="validation-icon" *ngIf="secondForm.valid" icon="checkmark-outline"></nb-icon>
+              <nb-icon class="validation-icon" *ngIf="secondForm.invalid && (secondForm.dirty || secondForm.touched)" icon="close-square-outline">
+              </nb-icon><br><br><br>
+            </div><br>
+            <p class="lorem">
+              <b>Faites glisser et déposer vos fichiers içi ou</b>  <span style="color: red"> <b> choisissez un fichier</b></span><br>
+              <span>XLSX,xls,csv (2 MB Max) par fichier </span>
+            </p><br><br>
+          </div><br><br><br>
+          <nb-card>
+            <nb-card-body>
+                <div class="fas fa-file-alt">
+                  <p *ngIf="fileName" class="Name"><b>Nom de fichier : {{fileName}}</b></p>
+                </div>
+              <div class="progress" *ngIf="fileName">
+                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" [style.width.%]="progress" [class.animate]="animating"></div>
+              </div>
+            </nb-card-body>
+          </nb-card>
+
+          <div class="but">
+            <button nbButton nbStepperPrevious outline status="danger">prev</button>
+            <button  nbButton nbStepperNext outline status="danger">next</button>
+          </div>
+
+
+        </form>
+      </nb-step>
+
+
+
+      <!--third forms -->
+      <nb-step [stepControl]="thirdForm" label="Third step">
+        <form [formGroup]="thirdForm" (ngSubmit)="onThirdSubmit()" class="step-container">
+         <nb-card>
+           <nb-card-header>
+                      <h6>Aperçu de l'examen </h6>
+           </nb-card-header><br><br>
+           <span style="text-align: center">N°Interrogation :
+             <span style="color: red">63453921 |</span>
+            <span> Date Chargement :</span>  <span style="color: red"> 25/02/2023   14:50 |</span>
+             <span> Procesus :</span> <span style="color: red"> Saisie Arret | </span>
+              <span> Initiateur :</span><span style="color: red"> RABI YOUSSEF  </span>
+          </span><br>
+           <nb-card class="ma-carte">
+              <nb-select nbInput fullWidth placeholder="Nom du Fichier">
+                <nb-option value="option1">Option 1</nb-option>
+                <nb-option value="option2">Option 2</nb-option>
+                <nb-option value="option3">Option 3</nb-option>
+              </nb-select>
+              <nb-select nbInput fullWidth placeholder="Nombre de Feuille">
+                <nb-option value="option1">Option 1</nb-option>
+                <nb-option value="option2">Option 2</nb-option>
+                <nb-option value="option3">Option 3</nb-option>
+              </nb-select>
+              <nb-select nbInput fullWidth placeholder="Nombre de Colonne / Feuille">
+                <nb-option value="option1">Option 1</nb-option>
+                <nb-option value="option2">Option 2</nb-option>
+                <nb-option value="option3">Option 3</nb-option>
+              </nb-select>
+              <nb-select nbInput fullWidth placeholder="Titre sur les feuilles ">
+                <nb-option value="option1">Option 1</nb-option>
+                <nb-option value="option2">Option 2</nb-option>
+                <nb-option value="option3">Option 3</nb-option>
+              </nb-select>
+              <nb-select nbInput fullWidth placeholder="Texte sur chque colone">
+                <nb-option value="option1">Option 1</nb-option>
+                <nb-option value="option2">Option 2</nb-option>
+                <nb-option value="option3">Option 3</nb-option>
+              </nb-select>
+           </nb-card>
+           <br>
+           <p style="text-align:center"><b>Merci de corriger les erreurs remontées !</b></p>
+
+
+
+
+         </nb-card>
+
+          <div class="but">
+          <button nbButton nbStepperPrevious outline status="danger">prev</button>
+          <button nbButton nbStepperNext outline status="danger">Confirm</button>
+          </div>
+        </form>
+      </nb-step>
+      <nb-step [stepControl]="thirdForm" [hidden]="true" label="Third step">
+        <div class="step-container">
+          <h2 style="text-align: center;color: red">Le téléchargement est terminé Merci !</h2>
+          <button nbButton nbStepperNext outline status="danger">Try again</button>
+        </div>
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>

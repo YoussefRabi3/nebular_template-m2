@@ -1,0 +1,23 @@
+.file-info {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+.file-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.file-size {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.file-checksum {
+  font-size: 14px;
+  font-style: italic;
+}
